@@ -1,0 +1,41 @@
+{
+  "skill_name": "diagram-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review evals/fixtures/diagrams/order-flow.mmd — is this diagram good?",
+      "expected_output": "A findings report in the exact skill format (12-row verdict table, top 3 fixes as actions) followed by a redraw delivered in the response as Mermaid, including legend and element table. The input fixture stays untouched.",
+      "files": ["evals/fixtures/diagrams/order-flow.mmd"],
+      "expectations": [
+        "The report contains a findings table with exactly 12 rule rows",
+        "Every verdict is one of: pass, partial, fail, not-applicable (rendered as the four emoji from the skill)",
+        "The report starts with a purpose assessment line (rule 1)",
+        "Exactly 3 top fixes are listed",
+        "Each top fix is phrased as an action, not a restatement of a finding",
+        "Rule 2 (legend) is marked as a fail — the fixture has no legend",
+        "Rule 4 (names defined) is marked fail or partial — the fixture uses cryptic names like 'Mgr' and 'GW'",
+        "Rule 7 (~12 elements) is marked pass or not-applicable — the fixture has 9 elements",
+        "A redraw is produced as a Mermaid code block",
+        "The redraw includes a legend",
+        "The redraw includes an element table",
+        "The redraw stays within the rulebook element budget (~12 structural elements, up to ~20 steps for flows), excluding the legend",
+        "The input fixture file evals/fixtures/diagrams/order-flow.mmd is not modified"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review all diagrams in evals/fixtures/diagrams/ and rank them by quality.",
+      "expected_output": "Both diagrams reviewed against the 12 rules and an explicit ranking reported. Fanning out diagram-reviewer agents is acceptable but not required for two small text sources; inline reviews are fine.",
+      "files": [
+        "evals/fixtures/diagrams/order-flow.mmd",
+        "evals/fixtures/diagrams/user-signup.mmd"
+      ],
+      "expectations": [
+        "Both diagrams (order-flow and user-signup) are reviewed — each gets per-rule findings (full table or compact per-diagram summary)",
+        "An explicit ranking or comparative verdict of the two diagrams is reported",
+        "Findings for user-signup.mmd flag the unexplained styling (two nodes carry raw hex fill colors with no legend) under rule 2 or rule 8",
+        "Findings reference actual fixture content (node names such as 'Mgr', 'GW', 'SvcA', 'BFF'), not invented elements"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+graph LR
+    UI[UI] --> GW[GW]
+    GW --> Mgr[Mgr]
+    Mgr --> Core[Core]
+    Mgr -.-> Q[Q]
+    Q --> Wrk[Wrk]
+    Wrk --> DB[(DB)]
+    Core --> DB
+    Core --> Ext[Ext.Svc]
+    GW --> Auth[Auth]
+    Auth --> DB

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagram Review — __TITLE__</title>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+</script>
+<style>
+  :root {
+    --ink: #1a1a1a; --muted: #6b7280; --line: #e5e7eb;
+    --pass: #16a34a; --warn: #d97706; --fail: #dc2626;
+    --bg: #fafafa; --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2rem 1.5rem; background: var(--bg); color: var(--ink);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.15rem; margin: 0 0 1rem; border-bottom: 1px solid var(--line); padding-bottom: .5rem; }
+  .meta { color: var(--muted); margin-bottom: 2rem; }
+  .purpose { background: var(--card); border-left: 4px solid var(--ink); padding: .75rem 1rem; margin-bottom: 2rem; border-radius: 0 6px 6px 0; box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+  .compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+  .compare > div { min-width: 0; }
+  .compare h3 { font-size: .95rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 .75rem; }
+  .diagram-box { border: 1px dashed var(--line); border-radius: 6px; padding: 1rem; overflow-x: auto; background: #fff; }
+  .diagram-box img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+  table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+  th, td { text-align: left; padding: .5rem .75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; }
+  td.verdict { white-space: nowrap; }
+  ol.fixes li { margin-bottom: .5rem; }
+  pre.source { background: #f4f4f5; border: 1px solid var(--line); border-radius: 6px; padding: 1rem; overflow-x: auto; font-size: .85rem; }
+  .legend { color: var(--ink); font-size: .95rem; }
+  footer { color: var(--muted); font-size: .85rem; text-align: center; margin-top: 2rem; }
+  footer a { color: inherit; }
+  @media print { body { background: #fff; } section { box-shadow: none; break-inside: avoid; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Diagram Review: __TITLE__</h1>
+  <p class="meta">Reviewed __DATE__ · against the 12 rules from INNOQ's “Better Architecture Diagrams”</p>
+
+  <div class="purpose"><strong>Purpose (rule 1):</strong> __PURPOSE__</div>
+
+  <section>
+    <h2>Original vs. Redraw</h2>
+    <div class="compare">
+      <div>
+        <h3>Original</h3>
+        <div class="diagram-box">__ORIGINAL__</div>
+      </div>
+      <div>
+        <h3>Redraw</h3>
+        <div class="diagram-box">
+          <pre class="mermaid">__REDRAW_MERMAID__</pre>
+        </div>
+        <p class="legend"><strong>Legend:</strong> __LEGEND__</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Findings</h2>
+    <table>
+      <thead><tr><th>#</th><th>Rule</th><th>Verdict</th><th>Finding</th></tr></thead>
+      <tbody>
+__FINDINGS_ROWS__
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Top Fixes</h2>
+    <ol class="fixes">
+__FIXES__
+    </ol>
+  </section>
+
+  <section>
+    <h2>Element Table (Redraw)</h2>
+    <table>
+      <thead><tr><th>Element</th><th>Meaning / Responsibility</th></tr></thead>
+      <tbody>
+__ELEMENT_TABLE_ROWS__
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Redraw Source</h2>
+    <pre class="source"><code>__REDRAW_SOURCE__</code></pre>
+  </section>
+
+  <footer>Rules: <a href="https://www.innoq.com/en/blog/2022/09/better-architecture-diagrams/">Better Architecture Diagrams — INNOQ / Gernot Starke</a></footer>
+</main>
+</body>
+</html>

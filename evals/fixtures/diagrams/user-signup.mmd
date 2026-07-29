@@ -1,0 +1,17 @@
+graph TD
+    A[App] --> B[LB]
+    B --> C[FE]
+    C --> D[BFF]
+    C --> L[CDN]
+    D --> E[SvcA]
+    D --> F[SvcB]
+    D --> J[IdP]
+    E --> G[(DB1)]
+    F --> H[(DB2)]
+    E --> I[Cache]
+    F --> I
+    J --> K[Ext]
+    E -.-> M[Bus]
+    M -.-> F
+    style E fill:#f96
+    style F fill:#69f

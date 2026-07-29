@@ -1,0 +1,11 @@
+[
+  {"query": "is this diagram good? docs/architecture/overview.png", "should_trigger": true},
+  {"query": "my colleague drew this on the whiteboard, here's a photo (IMG_4411.jpg) — critique it before I put it in the wiki", "should_trigger": true},
+  {"query": "review the mermaid diagram in the README, something feels off about it", "should_trigger": true},
+  {"query": "check all diagrams under docs/adr/ and tell me which ones need rework", "should_trigger": true},
+  {"query": "our customer-facing architecture doc goes out friday, audit the diagrams in it pls", "should_trigger": true},
+  {"query": "review this PR: https://github.com/acme/checkout/pull/482", "should_trigger": false},
+  {"query": "draw a component diagram for our new billing service", "should_trigger": false},
+  {"query": "the diagram in docs/flow.mmd doesn't render, mermaid says 'Parse error on line 7' — fix it", "should_trigger": false},
+  {"query": "compare our architecture with what netflix does for streaming, is ours reasonable?", "should_trigger": false}
+]

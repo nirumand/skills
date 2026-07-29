@@ -1,0 +1,13 @@
+[
+  {"query": "Create a context diagram for our payment service — it talks to the mobile app, a fraud provider, and our customer DB", "should_trigger": true},
+  {"query": "can you diagram my system? we have a react frontend, a spring boot api and postgres", "should_trigger": true},
+  {"query": "I'm writing the arc42 docs for the checkout service, sketch the building block view for section 5", "should_trigger": true},
+  {"query": "visualize the deployment: 3 k8s clusters, one per region, shared redis, cloudflare in front", "should_trigger": true},
+  {"query": "draw a sequence diagram of what happens when a user resets their password in src/auth/", "should_trigger": true},
+  {"query": "the review said rule 2 fails — redraw the diagram with a proper legend", "should_trigger": true},
+  {"query": "make me a gantt chart for the Q3 project timeline", "should_trigger": false},
+  {"query": "is this diagram good? docs/architecture/overview.png", "should_trigger": false},
+  {"query": "audit the diagrams in our customer-facing doc before it goes out friday", "should_trigger": false},
+  {"query": "my mermaid diagram won't render in github, can you fix the syntax? file is docs/flow.mmd", "should_trigger": false},
+  {"query": "turn that diagram review into a shareable html page for the team", "should_trigger": false}
+]

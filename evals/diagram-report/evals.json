@@ -1,0 +1,35 @@
+{
+  "skill_name": "diagram-report",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here is a completed diagram review: evals/fixtures/report-input/review-findings.md (original diagram: evals/fixtures/diagrams/order-flow.mmd). Generate the standalone HTML report for it.",
+      "expected_output": "A single self-contained HTML file built from the skill's bundled template, with all placeholders filled: original diagram, 12 findings rows, fixes, redraw rendered via Mermaid, legend, element table",
+      "files": [
+        "evals/fixtures/report-input/review-findings.md",
+        "evals/fixtures/diagrams/order-flow.mmd"
+      ],
+      "expectations": [
+        "An HTML file matching diagram-review-*.html is created (e.g. diagram-review-order-flow.html)",
+        "No template placeholder (text matching the __NAME__ pattern such as __TITLE__, __DATE__ or __FINDINGS_ROWS__) remains in the file",
+        "The report retains the bundled template's structure: its section headings and the INNOQ attribution footer link are present",
+        "The findings table in the HTML contains exactly 12 rule rows",
+        "The file contains two <pre class=\"mermaid\"> blocks: one embedding the original diagram source, one with the redraw",
+        "The copyable redraw source block is HTML-escaped: the '&' in the fixture's 'Pricing & Tax Core' node appears as '&amp;' there, while the <pre class=\"mermaid\"> redraw block keeps it raw",
+        "The legend and element table from the review are present in the report",
+        "The file references no local sibling files — the only external references are the Mermaid CDN and the template's own INNOQ attribution link"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Make me a shareable HTML report for evals/fixtures/diagrams/order-flow.mmd.",
+      "expected_output": "Prerequisite-gate behavior: no completed review exists, so the skill must run (or explicitly perform) the diagram-review workflow first, then render the report — not fabricate findings or render an empty template",
+      "files": ["evals/fixtures/diagrams/order-flow.mmd"],
+      "expectations": [
+        "A review is performed (or the diagram-review skill invoked) before the report is rendered — the prerequisite is not skipped silently",
+        "The resulting findings correspond to the fixture's actual flaws (missing legend, cryptic names like 'Mgr'), not invented content",
+        "The final HTML contains a 12-row findings table and a redraw, same format contract as eval 1"
+      ]
+    }
+  ]
+}

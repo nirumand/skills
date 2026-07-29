@@ -1,0 +1,20 @@
+{
+  "name": "diagram-tools",
+  "description": "Create, review, and report on software architecture diagrams using the 12 INNOQ \"Better Architecture Diagrams\" rules. Ships three skills (diagram-create, diagram-review, diagram-report) and a diagram-reviewer agent for parallel bulk reviews.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Reza Nirumand",
+    "url": "https://github.com/nirumand"
+  },
+  "homepage": "https://github.com/nirumand/skills",
+  "repository": "https://github.com/nirumand/skills",
+  "license": "MIT",
+  "keywords": [
+    "architecture",
+    "diagrams",
+    "mermaid",
+    "plantuml",
+    "review",
+    "documentation"
+  ]
+}

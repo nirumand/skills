@@ -1,0 +1,31 @@
+{
+  "name": "nirumand-skills",
+  "owner": {
+    "name": "Reza Nirumand",
+    "url": "https://github.com/nirumand"
+  },
+  "metadata": {
+    "description": "Reza Nirumand's public marketplace of Claude Code plugins, agents, and skills.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "diagram-tools",
+      "source": "./plugins/diagram-tools",
+      "description": "Create, review, and report on software architecture diagrams using the 12 INNOQ \"Better Architecture Diagrams\" rules. Includes a diagram-reviewer agent for parallel bulk reviews.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Reza Nirumand"
+      },
+      "keywords": [
+        "architecture",
+        "diagrams",
+        "mermaid",
+        "plantuml",
+        "review",
+        "documentation"
+      ],
+      "category": "documentation"
+    }
+  ]
+}

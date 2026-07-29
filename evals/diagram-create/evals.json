@@ -1,0 +1,44 @@
+{
+  "skill_name": "diagram-create",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a context diagram for our payment service. It talks to a fraud-check provider (external), our customer database, the mobile app, and the accounting system. Audience is the dev team.",
+      "expected_output": "A Mermaid diagram with legend, element table, and a verification note",
+      "files": [],
+      "expectations": [
+        "The output contains a Mermaid code block",
+        "A legend explains every arrow/box style used (in-diagram subgraph or text directly beside the diagram)",
+        "An element table lists each element with a one-line responsibility",
+        "A verification note states the checklist result; if no trade-offs were needed, an explicit 'none' is acceptable",
+        "The diagram title or caption states a single purpose without the word 'and' joining two concerns"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Visualize this architecture: 18 microservices behind a gateway, grouped into ordering (5 services), inventory (6 services), shipping (7 services). All share one Kafka bus and each group has its own Postgres. I need this for our arc42 docs.",
+      "expected_output": "An overview diagram that clusters the three groups (staying around the ~12 element budget) rather than drawing 18 boxes, with refinement diagrams offered or delivered",
+      "files": [],
+      "expectations": [
+        "The top-level diagram clusters the 18 services into groups instead of drawing 18 individual boxes",
+        "The top-level diagram has about 12 or fewer elements, excluding the legend",
+        "The output mentions refinement diagrams (offered or delivered) for zooming into a cluster",
+        "A legend is present",
+        "An element table is present",
+        "A verification note is present; the clustering trade-off is mentioned in the note or the surrounding delivery text"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I need one diagram for the wiki showing our component structure and also how the components are deployed across the two k8s clusters.",
+      "expected_output": "The skill's most distinctive behavior: recognizing a two-purpose request (structure AND deployment) and splitting into two diagrams, or explicitly proposing the split, instead of cramming both into one picture",
+      "files": [],
+      "expectations": [
+        "Two diagrams are delivered, or a split into two diagrams is explicitly proposed with reasoning (one purpose per diagram)",
+        "If diagrams are delivered, each title/caption states a single purpose without 'and' joining structure and deployment",
+        "Each delivered diagram has a legend",
+        "The output does not deliver a single diagram mixing static structure and deployment without flagging the rule 1 violation"
+      ]
+    }
+  ]
+}

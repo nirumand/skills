@@ -1,0 +1,10 @@
+[
+  {"query": "great review — now make an HTML report of it I can send to the team", "should_trigger": true},
+  {"query": "yes, generate the html report for that diagram review", "should_trigger": true},
+  {"query": "turn that diagram review into a shareable page showing before and after side by side", "should_trigger": true},
+  {"query": "I need something visual to show the diagram's author what to fix — original vs redraw in one file", "should_trigger": true},
+  {"query": "export our test coverage results as an html report", "should_trigger": false},
+  {"query": "review docs/overview.png", "should_trigger": false},
+  {"query": "draw me a diagram of our ingest pipeline and put it in an html page", "should_trigger": false},
+  {"query": "make a lighthouse report for our landing page", "should_trigger": false}
+]
